@@ -15,6 +15,7 @@ const refs = {
 };
 
 let selectedDate = null;
+refs.startBtn.setAttribute(`disabled`, '');
 
 const options = {
   enableTime: true,
@@ -65,8 +66,6 @@ function onClickBtnStart() {
       clearInterval(timerIntervalStart);
       return;
     }
-
-    refs.startBtn.setAttribute(`disabled`, '');
 
     refs.days.textContent = addLeadingZero(convertMs(timeDifferenceValue).days);
     refs.hours.textContent = addLeadingZero(
